@@ -1,0 +1,30 @@
+--- a/Makefile.am	2009-08-16 04:40:27.000000000 -0500
++++ b/Makefile.am	2012-03-30 17:29:29.706578437 -0500
+@@ -2,10 +2,10 @@
+ 
+ SUBDIRS = po intl src plugins
+ 
+-EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat.png \
++EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat-orig.png \
+ 		xchat.desktop xchat.spec config.h.w32 xchat.ico
+ 
+-icon_DATA = xchat.png
++icon_DATA = xchat-orig.png
+ icondir = $(datadir)/pixmaps
+ 
+ util_DATA = xchat.desktop
+--- a/xchat-2.8.8/Makefile.in	2010-05-30 01:30:25.000000000 -0500
++++ b/Makefile.in	2012-03-30 17:29:32.023578582 -0500
+@@ -327,10 +327,10 @@
+ unamepath = @unamepath@
+ xchatlibdir = @xchatlibdir@
+ SUBDIRS = po intl src plugins
+-EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat.png \
++EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat-orig.png \
+ 		xchat.desktop xchat.spec config.h.w32 xchat.ico
+ 
+-icon_DATA = xchat.png
++icon_DATA = xchat-orig.png
+ icondir = $(datadir)/pixmaps
+ util_DATA = xchat.desktop
+ utildir = $(datadir)/applications

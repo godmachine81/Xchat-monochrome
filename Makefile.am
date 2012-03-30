@@ -2,10 +2,10 @@
 
 SUBDIRS = po intl src plugins
 
-EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat.png \
+EXTRA_DIST = autogen.sh HACKING INSTALL.w32 faq.html xchat-orig.png \
 		xchat.desktop xchat.spec config.h.w32 xchat.ico
 
-icon_DATA = xchat.png
+icon_DATA = xchat-orig.png
 icondir = $(datadir)/pixmaps
 
 util_DATA = xchat.desktop
