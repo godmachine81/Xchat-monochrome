@@ -67,7 +67,7 @@ src_prepare() {
 	#cp "{S}"/xchat.png "{S}"/xchat-orig.png
 	cp "${FILESDIR}"/xchat.png "${S}"/src/pixmaps/xchat.png 
 	cp "${FILESDIR}"/highlight.png "${FILESDIR}"/fileoffer.png "${FILESDIR}"/message.png "${S}"/src/pixmaps/
-	epatch "${FILESDIR}"/monochrome.patch ||DIE
+	epatch "${FILESDIR}"/monochrome.patch ||die
 	fi
 
 	eautoreconf
