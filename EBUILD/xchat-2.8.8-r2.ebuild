@@ -17,7 +17,7 @@ HOMEPAGE="http://www.xchat.org/"
 LICENSE="GPL-2 hires-icons? ( GPL-3 )"
 SLOT="2"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="dbus fastscroll +gtk hires-icons ipv6 libnotify mmx nls ntlm perl python spell ssl tcl xchatdccserver"
+IUSE="dbus fastscroll +gtk hires-icons ipv6 libnotify monochrome mmx nls ntlm perl python spell ssl tcl xchatdccserver"
 
 RDEPEND=">=dev-libs/glib-2.6.0:2
 	gtk? ( >=x11-libs/gtk+-2.10.0:2 )
@@ -63,10 +63,13 @@ src_prepare() {
 	cp "${EPREFIX}"/usr/share/gettext/po/Makefile.in.in "${S}"/po/ || die
 
 	#use monochrome icons
+	if use monochrome; then
 	#cp "{S}"/xchat.png "{S}"/xchat-orig.png
 	cp "${FILESDIR}"/xchat.png "${S}"/src/pixmaps/xchat.png 
 	cp "${FILESDIR}"/highlight.png "${FILESDIR}"/fileoffer.png "${FILESDIR}"/message.png "${S}"/src/pixmaps/
-	epatch "${FILESDIR}"/monochrome.patch
+	epatch "${FILESDIR}"/monochrome.patch ||DIE
+	fi
+
 	eautoreconf
 }
 
